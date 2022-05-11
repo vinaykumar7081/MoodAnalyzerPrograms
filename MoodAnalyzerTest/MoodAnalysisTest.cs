@@ -13,10 +13,10 @@ namespace MoodAnalyzerTest
             moodAnalyzer = new MoodAnalyzer();
         }
         [TestMethod]
-        public void InputInString_CheckingMoodAnalysis_MustBeReturn_Sad()
+        public void InputInString_CheckingMoodAnalysis_MustBeReturn_Happy()
         {
-            var result = moodAnalyzer.AnalyzeMood("I am in Sad Mood");
-            Assert.AreEqual(result,"Sad");
+            var result = moodAnalyzer.AnalyzeMood("I am in Any Mood");
+            Assert.AreEqual(result,"Happy");
         }
     }
 }
