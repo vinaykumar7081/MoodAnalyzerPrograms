@@ -5,18 +5,18 @@ namespace MoodAnalyzerTest
 {
 
     [TestClass]
-    public class UnitTest1
+    public class MoodAnalysisTest
     {
         private readonly MoodAnalyzer moodAnalyzer;
-        public UnitTest1()
+        public MoodAnalysisTest()
         {
             moodAnalyzer = new MoodAnalyzer();
         }
         [TestMethod]
-        public void TestMethod1()
+        public void InputInString_CheckingMoodAnalysis_MustBeReturn_Sad()
         {
-            var result = moodAnalyzer.AnalyzeMood("Happy");
-            Assert.AreEqual(result,"happy");
+            var result = moodAnalyzer.AnalyzeMood("I am in Sad Mood");
+            Assert.AreEqual(result,"Sad");
         }
     }
 }

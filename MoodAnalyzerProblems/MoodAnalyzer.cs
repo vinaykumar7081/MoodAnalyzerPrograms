@@ -4,15 +4,14 @@
     {
         public string AnalyzeMood(string message)
         {
-            if (message.ToLower().Equals("happy"))
+            if (message.ToLower().Contains("sad"))
             {
-                return "happy";
+                return "Sad";
             }
-            else 
+            else
             {
-                return "sad";
+                return "Happy";
             }
-           
         }
     }
 }
