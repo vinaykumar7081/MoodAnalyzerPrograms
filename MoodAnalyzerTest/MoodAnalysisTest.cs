@@ -21,7 +21,7 @@ namespace MoodAnalyzerTest
             {
                 var result = moodAnalyzer.AnalyzeMood();
             }
-            catch (MoodAnalysisException ex)
+            catch (System.Exception ex)
             {
                 Assert.AreEqual(ex.Message, "message is Empty");
             }
