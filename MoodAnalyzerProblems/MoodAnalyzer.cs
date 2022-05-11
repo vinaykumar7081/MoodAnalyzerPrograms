@@ -9,14 +9,27 @@
         }
         public string AnalyzeMood()
         {
-            if (message.ToLower().Contains("happy"))
+           
+            try
             {
-                return "Happy";
+                if (message == null)
+                {
+                    throw new MoodAnalysisException(MoodAnalysisException.ExceptionType.INVALID_MOOD, "message is Null");
+                }
+                if (message.ToLower().Contains("happy"))
+                {
+                    return "Happy";
+                }
+                else
+                {
+                    return "Sad";
+                }
             }
-            else
-            {
-                return "Sad";
+            catch (Exception)
+            { 
+            throw new MoodAnalysisException(MoodAnalysisException.ExceptionType.INVALID_MOOD,"message is Null");
             }
+           
         }
     }
 }
