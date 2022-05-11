@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MoodAnalyzerProblems
 {
-    internal class MoodAnalyzerException: Exception
+    public class MoodAnalyzerException: Exception
     { 
         public enum ExceptionType
         {
