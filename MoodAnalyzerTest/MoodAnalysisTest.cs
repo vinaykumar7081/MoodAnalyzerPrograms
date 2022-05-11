@@ -10,13 +10,13 @@ namespace MoodAnalyzerTest
         private readonly MoodAnalyzer moodAnalyzer;
         public MoodAnalysisTest()
         {
-            moodAnalyzer = new MoodAnalyzer("I am in Sad Mood");
+            moodAnalyzer = new MoodAnalyzer("I am in Happy Mood");
         }
         [TestMethod]
-        public void InputInString_CheckingMoodAnalysis_MustBeReturn_Sad()
+        public void InputInString_CheckingMoodAnalysis_MustBeReturn_Happy()
         {
             var result = moodAnalyzer.AnalyzeMood();
-            Assert.AreEqual(result,"Sad");
+            Assert.AreEqual(result,"Happy");
         }
     }
 }
