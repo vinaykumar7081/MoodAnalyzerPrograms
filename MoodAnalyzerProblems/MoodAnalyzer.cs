@@ -9,13 +9,9 @@
         }
         public string AnalyzeMood()
         {
-           
             try
             {
-                if (message == null)
-                {
-                    throw new MoodAnalysisException(MoodAnalysisException.ExceptionType.INVALID_MOOD, "message is Null");
-                }
+
                 if (message.ToLower().Contains("happy"))
                 {
                     return "Happy";
@@ -26,8 +22,8 @@
                 }
             }
             catch (Exception)
-            { 
-            throw new MoodAnalysisException(MoodAnalysisException.ExceptionType.INVALID_MOOD,"message is Null");
+            {
+                return "Happy";
             }
            
         }
