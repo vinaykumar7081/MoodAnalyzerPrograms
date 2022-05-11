@@ -15,7 +15,7 @@ namespace MoodAnalyzerTest
         [TestMethod]
         [DataRow("", "message is Empty")]
         [DataRow(null, "message is null")]
-        public void InputInString_CheckingMoodAnalysis_MustBeReturn_Happy( string input,string expected)
+        public void InputInString_CheckingMoodAnalysis_MustBeReturn_InvalidMessage( string input,string expected)
         {
             try
             {
