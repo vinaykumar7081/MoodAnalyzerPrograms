@@ -37,5 +37,11 @@ namespace UserValidationTest
             string result = input.Validate_EmailAddressPassword_AtLeastOneUpperCase("AbvBabshsbchjcg");
             Assert.AreEqual("AbvBabshsbchjcg", result);
         }
+        [Test]
+        public void InputInString_CheckingValidationFor_EmailPassword_MinimumOneUpperCase_MinimumoneNumeric()
+        {
+            string result = input.Validate_EmailAddressPassword_AtLeastOneUpperCase_AtLEastOneNumeric("AbvBabshsbchjcg451");
+            Assert.AreEqual("AbvBabshsbchjcg451", result);
+        }
     }
 }
