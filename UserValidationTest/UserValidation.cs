@@ -22,7 +22,13 @@ namespace UserValidationTest
         [Test]
         public void InputInString_CheckingValidationFor_EmailOfUser()
         {
-            bool result = input.Validate_EmainAddress("abc.xyz@gmail.co.in");
+            bool result = input.Validate_EmailAddress("abc.xyz@gmail.co.in");
+            Assert.IsTrue(result);
+        }
+        [Test]
+        public void InputInString_CheckingValidationFor_MobileNumber()
+        {
+            bool result = input.Validate_EmailAddress("+91 7081209335");
             Assert.IsTrue(result);
         }
     }
