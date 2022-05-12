@@ -49,5 +49,11 @@ namespace UserValidationTest
             string result = input.Validate_EmailAddressPassword_AtLeastOneUpperCase_AtLEastOneNumeric_ExactlyOneSpecialCharcter("AbvBabshsbchjcg451&");
             Assert.AreEqual("AbvBabshsbchjcg451&", result);
         }
+        [Test]
+        public void InputInString_CheckingValidationFor_EmailAddress()
+        {
+            string result = input.Validate_EmailAddress_PossiblesEmails("abc-100@yahoo.com,");
+            Assert.AreEqual("abc-100@yahoo.com,", result);
+        }
     }
 }

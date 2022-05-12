@@ -75,5 +75,13 @@ namespace UserRegistrationProblems
                 return passwordCharNumberSpecialChar;
             }
         }
+        public string Validate_EmailAddress_PossiblesEmails(string emailAddress)
+        {
+            if (Regex.IsMatch(emailAddress, EMAILPASSWORD_MINIMUMONEUPPWRCASE_AtLEastOneNumeric_OneSpecialCharcter_REGEXX)) ;
+            {
+                Console.WriteLine("Email Address  is Valid for the user Account:" + emailAddress);
+                return emailAddress;
+            }
+        }
     }
 }
