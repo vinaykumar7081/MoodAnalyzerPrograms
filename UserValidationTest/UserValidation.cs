@@ -34,8 +34,8 @@ namespace UserValidationTest
         [Test]
         public void InputInString_CheckingValidationFor_EmailPassword()
         {
-            bool result = input.Validate_EmailAddressPassword("abshsbc154");
-            Assert.IsTrue(result);
+            string result = input.Validate_EmailAddressPassword_AtLeastOneUpperCase("AbvBabshsbchjcg");
+            Assert.AreEqual("AbvBabshsbchjcg", result);
         }
     }
 }
