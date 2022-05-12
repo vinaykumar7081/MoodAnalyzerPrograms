@@ -28,7 +28,13 @@ namespace UserValidationTest
         [Test]
         public void InputInString_CheckingValidationFor_MobileNumber()
         {
-            bool result = input.Validate_EmailAddress("+91 7081209335");
+            bool result = input.Validate_MobileNumber("+91 7081209335");
+            Assert.IsTrue(result);
+        }
+        [Test]
+        public void InputInString_CheckingValidationFor_EmailPassword()
+        {
+            bool result = input.Validate_EmailAddressPassword("abshsbc154");
             Assert.IsTrue(result);
         }
     }
