@@ -10,6 +10,7 @@ namespace UserRegistrationProblems
         public const string EMAILPASSWORD_REGEXX = "[A-Za-z]{8, }$";
         public const string EMAILPASSWORD_MINIMUMONEUPPWRCASE_REGEXX = "[A-Z]{1, }[A-Za-z]{8, }$";
         public const string EMAILPASSWORD_MINIMUMONEUPPWRCASE_AtLEastOneNumeric_REGEXX = "[A-Z]{1, }[A-Za-z]{8, }[0-1]{1, }$";
+        public const string EMAILPASSWORD_MINIMUMONEUPPWRCASE_AtLEastOneNumeric_OneSpecialCharcter_REGEXX = "[A-Z]{1, }[A-Za-z]{8, }[0-1]{1, }[!@#$%^&.]{1}$";
         public bool Validate_FirstName(string name)
         {
             if (Regex.IsMatch(name, NAME_REGEX)) ;
@@ -64,6 +65,14 @@ namespace UserRegistrationProblems
             {
                 Console.WriteLine("Email Address Password minimum one Upper Case is Valid for the user Account:" + passwordCharNumber);
                 return passwordCharNumber;
+            }
+        }
+        public string Validate_EmailAddressPassword_AtLeastOneUpperCase_AtLEastOneNumeric_ExactlyOneSpecialCharcter(string passwordCharNumberSpecialChar)
+        {
+            if (Regex.IsMatch(passwordCharNumberSpecialChar, EMAILPASSWORD_MINIMUMONEUPPWRCASE_AtLEastOneNumeric_OneSpecialCharcter_REGEXX)) ;
+            {
+                Console.WriteLine("Email Address Password minimum one Upper Case is Valid for the user Account:" + passwordCharNumberSpecialChar);
+                return passwordCharNumberSpecialChar;
             }
         }
     }
