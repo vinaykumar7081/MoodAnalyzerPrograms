@@ -75,5 +75,29 @@ namespace MoodAnalyzerProblems
                throw new MoodAnalyzerException(MoodAnalyzerException.ExceptionType.NO_SUCH_CLASS, "Class not Found");
             }
         }
+        ///<summary>
+        ///Method to Set The Field Dynamically using Reflection
+        ///</summary>
+        ///<param name="moodAnalyzeObject"></param>
+        ///<param name="message"></param>
+        public static string SetField(string message, string fieldName)
+        {
+            try
+            {
+                MoodAnalyzer moodAnalyzer = new MoodAnalyzer();
+                Type type = typeof(MoodAnalyzer);
+                FieldInfo field = type.GetField(fieldName, BindingFlags.Public | BindingFlags.Instance);
+                if (message == null)
+                {
+                    throw new MoodAnalyzerException(MoodAnalyzerException.ExceptionType.NO_SUCH_FIELD, "Message Should not be null");
+                }
+                field.SetValue(moodAnalyzer, message);
+                return moodAnalyzer.message;
+            }
+            catch (NullReferenceException)
+            {
+                throw new MoodAnalyzerException(MoodAnalyzerException.ExceptionType.NO_SUCH_FIELD, "Field is  not Found");
+            }
+        }
     }
 }
