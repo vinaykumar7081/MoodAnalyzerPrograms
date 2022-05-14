@@ -52,5 +52,12 @@ namespace MoodAnalyzerTest
             object obj = MoodAnalyseFactory.CreateMoodAnalyseUsingParameterizedConstructor("MoodAnalyzerProblems.MoodAnalyzer", "MoodAnalyzer","HAPPY");
             expected.Equals(obj);
         }
+        [TestMethod]
+        public void GivenHappyMood_ShouldReturnHappy()
+        {
+            string expected = "Happy";
+            string mood = MoodAnalyseFactory.InvokeAnalyzerMood("Happy", "AnalyzeMood");
+            Assert.AreEqual(expected, mood);
+        }
     }
 }
