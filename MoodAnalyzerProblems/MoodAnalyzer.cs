@@ -33,6 +33,10 @@
                     return "Sad";
                 }
             }
+            catch (MoodAnalyzerException)
+            {
+                throw new MoodAnalyzerException(MoodAnalyzerException.ExceptionType.NULL_MOOD, "Message is Null");
+            }
             catch (Exception)
             {
                 throw new MoodAnalyzerException(MoodAnalyzerException.ExceptionType.EMPTY_MOOD, "Message is Empty");
