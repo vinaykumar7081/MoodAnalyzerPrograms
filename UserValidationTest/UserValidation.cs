@@ -1,11 +1,13 @@
 using NUnit.Framework;
 using System;
+using System.Collections.Generic;
 using UserRegistrationProblems;
 
 namespace UserValidationTest
 {
     public class Tests
     {
+        List<string> list=new List<string>();
         Validation input = new Validation();
         [Test]
         public void InputInString_CheckingValidationFor_FirstName()
@@ -54,6 +56,18 @@ namespace UserValidationTest
         {
             string result = input.Validate_EmailAddress_PossiblesEmails("abc-100@yahoo.com,");
             Assert.AreEqual("abc-100@yahoo.com,", result);
+        }
+        [Test]
+        [TestCase("ajay123@gmail.com")]
+        [TestCase("vijay155@gmail.com")]
+        [TestCase("arun1454@gmail.com")]
+        [TestCase("ajay123@gmail")]
+        public void InputInString_CheckingValidationFor_EmailAddress_ParameterizedTest(string emailAddress)
+        {
+            
+               string result = input.Validate_EmailAddress_PossiblesEmails(emailAddress);
+                Assert.AreEqual(emailAddress, result);
+           
         }
     }
 }
